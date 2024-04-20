@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Roamradar</title>
+</head>
+
+<body>
+  <div id="video-container">
+    <video id="video-background" autoplay loop muted>
+      <source src="video (2160p).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">☰</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Theme</a>
+          <div class="nested-dropdown">
+            <a href="#" onclick="toggleNestedDropdown()">Theme</a>
+            <div class="nested-dropdown-content" id="nestedDropdownContent">
+              <a href="#">Dark Mode</a>
+              <a href="#">Light Mode</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="text-overlay">
+      <h1>"Roam Fearlessly, Roam Smartly<br> Your Trusted Travel Advisor"</h1>
+    </div>
+    <div class="input-card-container">
+      <div class="input-card tilt-left">
+        <p>"RoamRadar evaluates destinations tailored for modern nomads, considering criteria such as affordability,
+          connectivity, and climate suitability."</p>
+      </div>
+      <div class="input-card center">
+        <p>"The rankings on RoamRadar's cities are dynamic, continuously updated in real-time with input from our
+          community."</p>
+      </div>
+      <div class="input-card tilt-right">
+        <p>"RoamRadar serves as a comprehensive platform akin to Kayak, curating potential work destinations and ranking
+          them based on internet reliability, affordability, and safety."</p>
+      </div>
+    </div>
+    <div class="button-group">
+      <button class="action-button">View</button> <!-- View button -->
+      <button class="action-button">Sort by</button> <!-- Sort by button -->
+    </div>
+    <button class="action-button" id="filters-button">Filters</button>
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+    </div>
+    <div class="box-container">
+      <div class="box">
+        <img src="mexico.jpg" alt="Image 1">
+          <div class="city">Mexico City</div>
+          <div class="country">Mexico</div>
+          <div class="overlay">
+          <div class="features">
+            <div class="feature">
+              <span class="feature-name">Overall:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Cost:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Internet:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Safety:</span>
+              <div class="rating-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="kuala lumpur.jpg" alt="Image 2">
+          <div class="city">Kuala Lumpur</div>
+          <div class="country">Malaysia</div>
+          <div class="overlay">
+          <div class="features">
+            <div class="feature">
+              <span class="feature-name">Overall:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Cost:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Internet:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Safety:</span>
+              <div class="rating-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="capetown.webp" alt="Image 3">
+          <div class="city">Cape Town</div>
+          <div class="country">South Africa</div>
+          <div class="overlay">
+          <div class="features">
+            <div class="feature">
+              <span class="feature-name">Overall:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Cost:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Internet:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Safety:</span>
+              <div class="rating-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box-container">
+      <!-- Second set of three boxes -->
+      <div class="box">
+        <img src="london.jpg" alt="Image 4">
+          <div class="city">London</div>
+          <div class="country">UK</div>
+          <div class="overlay">
+          <div class="features">
+            <div class="feature">
+              <span class="feature-name">Overall:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Cost:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Internet:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Safety:</span>
+              <div class="rating-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="pune.jpg" alt="Image 5">
+          <div class="city">PUNE</div>
+          <div class="country">India</div>
+          <div class="overlay">
+          <div class="features">
+            <div class="feature">
+              <span class="feature-name">Overall:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Cost:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Internet:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Safety:</span>
+              <div class="rating-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="tokyo.jpg" alt="Image 6">
+          <div class="city">Tokyo</div>
+          <div class="country">Japan</div>
+          <div class="overlay">
+          <div class="features">
+            <div class="feature">
+              <span class="feature-name">Overall:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Cost:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Internet:</span>
+              <div class="rating-bar"></div>
+            </div>
+            <div class="feature">
+              <span class="feature-name">Safety:</span>
+              <div class="rating-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <img src="passport.jpg" alt="Image 6">
+      <div class="box-text">
+        <p>Get legal residency in 🇪🇸 Spain or 🇵🇹 Portugal. Your one-stop-shop for all your moving needs: visas, taxes, NIFs, bank accounts, health insurance and more.</p>
+        <form action="your_action_here" method="post">
+          <input type="submit" value="Get Residency" class="residency-button">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <img src="ins.jpg" alt="Image 6">
+    <div class="box-text">
+      <p>Getting Insured is always the best choice.</p>
+      <form action="your_action_here" method="post">
+        <input type="submit" value="Get Insurance" class="insurance-button">
+      </form>
+    </div>
+  </div>
+</div>
+    <a href="login.html"><button id="go-roam">Go Roam</button></a>
+  </div>
+  <div id="email-container">
+    <div id="video-wrapper"> <!-- New wrapper for the video -->
+      <div id="video-box">
+        <video id="email-video" controls>
+          <source src="video (2160p) (1).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <input type="email" id="email-input" placeholder="Enter your email"><br>
+      <button id="roam">Go Roam</button>
+    </div>
+    <script>
+      var video = document.getElementById("video-background");
+      video.playbackRate = 0.7; // Change the playback rate as needed (e.g., 0.5 for half speed)
+      var emailVideo = document.getElementById("email-video");
+      var videoWrapper = document.getElementById("video-wrapper"); // Get the wrapper element
+      var emailContainer = document.getElementById("email-container");
+      var isPlaying = false;
+
+      // Function to start playing video and increase its size
+      function startPlaying() {
+        console.log("Start playing video");
+        emailVideo.play();
+        videoWrapper.style.width = "600px"; // Adjust the size of the wrapper
+        isPlaying = true;
+      }
+
+      // Function to stop playing video and resize it to original size
+      function stopPlaying() {
+        console.log("Stop playing video");
+        emailVideo.pause();
+        videoWrapper.style.width = "400px"; // Adjust the size of the wrapper
+        isPlaying = false;
+      }
+
+      // Click event listener for video box and play button to toggle video playback
+      videoWrapper.addEventListener("click", function () {
+        console.log("Video box clicked");
+        if (!isPlaying) {
+          startPlaying();
+        } else {
+          stopPlaying();
+        }
+      });
+
+      document.getElementById("email-video").addEventListener("play", startPlaying);
+
+      // Click event listener for video to stop playing and resize it
+      emailVideo.addEventListener("click", function (event) {
+        console.log("Email video clicked");
+        event.stopPropagation(); // Stop the propagation of the click event
+        stopPlaying();
+      });
+      function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      }
+      // Function to toggle the visibility of nested dropdown content
+      function toggleNestedDropdown() {
+        var nestedDropdownContent = document.getElementById("nestedDropdownContent");
+        if (nestedDropdownContent.style.display === "block") {
+          nestedDropdownContent.style.display = "none";
+        } else {
+          nestedDropdownContent.style.display = "block";
+        }
+      }
+
+      // Function to close all nested dropdowns when clicking outside of them
+      window.onclick = function (event) {
+        if (!event.target.matches('.nested-dropdown')) {
+          var dropdowns = document.getElementsByClassName("nested-dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+              openDropdown.style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+</body>
+
+</html>

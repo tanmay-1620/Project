@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../Angular js/ngapp"
+		},
+		{
+			"path": "../../DBMS"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "C:/Users/Tanmay/myapp"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Project"
+	}
+}
