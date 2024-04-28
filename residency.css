@@ -1,0 +1,211 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    font-size: 16px;
+}
+
+header {
+    background-color: #34495e;  /* Darker shade for better visibility */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.logo {
+    color: #FFD700; /* Bright color for logo */
+    font-size: 1.8rem;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #2c3e50;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+input[type="search"] {
+    padding: 10px;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.content-section {
+    padding: 2rem 0;
+    background-color: #ffffff;
+}
+
+.box-container, .review-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.country-box, .review-box {
+    background-color: #e9e9e9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: calc(33.333% - 20px);
+}
+
+.country-box img, .review-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .country-box, .review-box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .country-box, .review-box {
+        width: 100%;
+    }
+}
+.content-section {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #02577A;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Update for review boxes */
+.review-box-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allows boxes to wrap onto the next line if not enough space */
+    justify-content: space-around;  /* Distributes space around items */
+    align-items: flex-start;  /* Aligns items at the start of the flex line */
+    padding: 20px;
+    margin: 0 auto;  /* Centers the container */
+    max-width: 1200px;  /* Optional: Controls the max width of the container */
+}
+
+.review-box {
+    background-color: #f0f4f7;  /* Light and neutral background color */
+    padding: 15px;
+    margin: 10px;  /* Space between boxes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 30%;  /* Width of each box to fit 3 in a row */
+    text-align: left;
+}
+
+/* Updated styling for the See More button */
+.see-more-btn {
+    display: block;  /* Block display for easier centering */
+    width: auto;  /* Auto width based on content */
+    margin: 20px auto;  /* Auto margin for horizontal centering */
+    padding: 12px 24px;  /* Comfortable padding */
+    background-color: #017bff;  /* Vibrant blue for visibility */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;  /* Stylish uppercase text */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;  /* Smooth transition for hover effects */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  /* Subtle shadow for depth */
+}
+
+.see-more-btn:hover {
+    background-color: #0056b3;  /* Darker blue on hover for interactive feedback */
+    transform: scale(1.05);  /* Slight scale up to provide a dynamic effect */
+}
+
+
+@media (max-width: 768px) {
+    .review-box {
+        width: calc(50% - 20px); /* Adjust for medium screens*/
+    }
+}
+
+@media (max-width: 480px) {
+    .review-box {
+        width: 100%; /* Full width on very small screens*/
+    }
+    .review-box-container {
+        flex-direction: column;
+    }
+}
+
+.content-section ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.content-section li {
+    padding: 10px 0; /* Adds vertical padding for better readability */
+    border-bottom: 1px solid #eee; /* Adds a subtle line between items */
+}
+
+.content-section li:last-child {
+    border-bottom: none; /* Removes border from the last item */
+}
+
+.content-section a {
+    color: #04668C; /* Ensures links are styled according to your theme */
+    text-decoration: none; /* Removes underline */
+}
+
+.content-section a:hover {
+    text-decoration: underline; /* Adds underline on hover for better interaction */
+}
