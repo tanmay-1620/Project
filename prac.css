@@ -1,0 +1,83 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#video-container, #email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-overlay {
+  position: absolute;
+  top: 13%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: comic sans-serif;
+  text-align: left;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 5px;
+}
+
+#roam-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 46px;
+  width: 95px;
+  background-color: #e9780f; /* Default button color */
+  color: white;
+  border:  2px solid rgb(205, 99, 29);
+  border-radius: 18px; /* Makes it round */
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+#roam-button:hover {
+  background-color: #d7980f;/* New color on hover */
+  border-color: black; /* Border color change */
+  background-color: transparent; /* Transparent background */
+}
+
+#email-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+#video-wrapper {
+  position: relative;
+  width: 33.33%; /* Adjust width to one-third of the screen */
+  height: auto;
+  cursor: pointer;
+  z-index: 2;
+  transition: width 0.5s ease; /* Smooth transition for resizing */
+}
+
+#video-box video {
+  width: 100%;
+  height: auto;
+}
+
+#email-input, #go-roam {
+  display: none; /* Hide the email input and button initially */
+}

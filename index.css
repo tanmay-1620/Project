@@ -1,0 +1,611 @@
+ html {
+     margin: 0;
+     padding: 0;
+ }
+ body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+   background-color: #f0f0f0;
+}
+/* CSS for the navbar and dropdown menu */
+.navbar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2; /* Ensure navbar is above the video overlay */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.989);
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 3; /* Ensure dropdown content is above the video overlay */
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+/* Style the nested dropdown container */
+.nested-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the nested dropdown content */
+.nested-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style the nested dropdown links */
+.nested-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style the nested dropdown links on hover */
+.nested-dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+ #video-container {
+  position: relative; /* Change position to relative */
+  width: 100%;
+  min-height: 100vh; /* Set minimum height to viewport height */
+  overflow: hidden;
+}
+ #video-background {
+    width: 400px; /* Set a fixed width */
+    height: 500px; /* Set a fixed height */
+    min-width: 100%;/* Ensure video covers entire screen width */
+    min-height: 20vh;/* 16:9 aspect ratio (9/16 * 100) */
+    object-fit: cover;
+    opacity: 1;
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none"><path d="M0,200 C150,200 250,165 500,200 L500,0 L0,0 Z"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none"><path d="M0,200 C150,200,250,165 500,200 L500,0 L0,0 Z"/></svg>');
+ }
+
+ #text-overlay {
+     position: absolute;
+     top: 13%;
+     left: 23%;
+     transform: translate(-50%, -50%);
+     color: rgb(255, 255, 255);
+     font-size: 20px;
+     font-family: comic sans-serif;
+     text-align: left;
+     z-index: 1;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+     padding: 5px;
+ }
+ #go-roam{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  height: 46px;
+  width: 95px;
+  background-color: #e9780f;
+  color: white;
+  border: 2px solid rgb(205, 99, 29);
+  border-radius: 18px;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999; /* Ensure the button stays on top of other elements */
+}
+#go-roam:hover {
+  background-color: #d7980f;
+  border-color: black;
+  background-color: transparent;
+}
+#roam {
+  width: calc(100% - 20px); /* Width minus padding */
+  color: white;
+  font-size: 16px;
+  background-color: transparent; /* Transparent background */
+  border: 2px solid white; /* White border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+}
+#roam:hover {
+  background-color: white; /* White background on hover */
+  color: black; /* Text color change on hover */
+}
+
+ #email-container {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    z-index: 1;
+    text-align: right;
+    color: white;
+    border: 2px solid white; /* White border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    height: 260px;
+  }
+
+  #email-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 150px;
+    width: calc(100% - 20px); /* Width minus padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin-left: 5px;
+  }
+  #video-box {
+    width: 300px; /* Initial width of the video box */
+    height: auto;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  #video-box video {
+    width: 100%;
+    height: auto;
+  }
+  .input-card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align items at the start of the cross axis */
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line if needed */
+    margin-top: 50px;
+    padding: 0 20px; /* Add padding to create space between items */
+}
+
+.input-card {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(212, 208, 208);
+    color: rgb(11, 1, 1);
+    border-radius: 10px;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.tilt-left {
+  transform: perspective(1000px) rotateY(15deg) translateY(-50px); 
+}
+
+.tilt-right {
+  transform: perspective(1000px) rotateY(-15deg) translateY(-50px); 
+}
+.input-card:hover {
+  transform: translateY(-40px); 
+}
+
+.center:hover {
+  transform: scale(1.05); 
+}
+.search-container {
+  display: inline-block;
+  margin-bottom: 20px; /* Add some bottom margin to create space */
+  margin-left: 20px;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px; /* Adjust the width as needed */
+  max-width: 100%;
+}
+/* Styles for filter button and other action buttons */
+#filters-button, .action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e75d1d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Ensures smooth transitions */
+  margin-right: 10px; /* Add some spacing between the buttons */
+}
+
+/* Style the filters button and other action buttons on hover */
+#filters-button:hover, .action-button:hover {
+  background-color: #cc5c1d; /* Darker shade on hover for better visibility */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect for depth */
+  color: #ffffff; /* Ensuring text color remains consistent */
+}
+
+/* Ensure all action buttons are aligned correctly and have uniform width */
+.action-button, #filters-button {
+  width: auto; /* Adjust width based on content, with padding accounted */
+  flex: none; /* Avoid stretching in flex containers if used */
+}
+
+ /* Align buttons to the right */
+ .button-group {
+  float: right;
+}
+/* Styles for the box container */
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px; /* Adjust spacing */
+}
+
+/* Existing CSS for boxes */
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box {
+  position: relative;
+  width: calc(33.33% - 20px); /* Adjust width to fit three boxes per row with spacing */
+  height: auto; /* Adjust height based on content */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px; /* Add some space between boxes */
+}
+
+.box img {
+  width: 100%;
+  height: 50%; /* Adjust height of image */
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.box:hover .overlay {
+  opacity: 1;
+}
+
+.city,
+.country {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.city {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.country {
+  bottom: 85px;
+}
+
+.features {
+  margin-top: 10px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.feature-name {
+  margin-right: 10px;
+}
+
+.rating-bar {
+  width: 100px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.rating-bar-inner {
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* New CSS for the box with image and text */
+.box-text {
+  padding: 10px;
+  height: 50%; /* Set the height of the text container */
+  box-sizing: border-box; /* Include padding in height calculation */
+  overflow: auto; /* Enable scrolling if content exceeds height */
+}
+.residency-button {
+  background-color: #eff0eff1; /* Green */
+  border: 2px solid black;
+  color: rgb(8, 4, 4);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.box-text {
+  padding: 10px;
+  height: 50%; /* Set the height of the text container */
+  box-sizing: border-box; /* Include padding in height calculation */
+  overflow: auto; /* Enable scrolling if content exceeds height */
+}
+.insurance-button {
+  background-color: #eff0eff1; /* Green */
+  border: 2px solid black;
+  color: rgb(8, 4, 4);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Add this to your existing CSS file, adjusting colors and fonts as needed */
+/* Tour search container styling */
+.tour-search .container {
+  max-width: 100%; /* Ensures container does not exceed the width of its parent */
+  margin: auto; /* Centers the container if there's extra space */
+  padding: 20px; /* Adds space inside the container */
+  box-sizing: border-box; /* Includes padding in the width calculation */
+}
+
+/* Form styling for full responsiveness */
+.tour-search-form {
+  display: flex;
+  flex-wrap: wrap; /* Allows form items to wrap onto the next line */
+  gap: 20px; /* Provides space between form items */
+  background-color: #f4f4f4; /* Light grey background, can be changed as needed */
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+}
+
+/* Input wrapper to ensure each field is responsive */
+.input-wrapper {
+  flex: 1 1 100%; /* Full width on smaller screens */
+  min-width: 200px; /* Ensures inputs don't become too narrow */
+  margin-bottom: 10px;
+}
+
+/* Styling for labels */
+.input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Input field styling */
+.input-field {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styling */
+.btn.btn-secondary {
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+}
+
+/* Hover effect for button */
+.btn.btn-secondary:hover {
+  background-color: #0056b3;
+}
+
+/* Ensure responsiveness across different devices */
+@media (min-width: 768px) {
+  .input-wrapper {
+      flex: 1 1 22%; /* Allows for better spacing between fields */
+  }
+}
+.actions-container {
+  display: flex;
+  justify-content: space-around; /* This will space the boxes evenly across the container */
+  flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+}
+
+.action-box {
+  flex: 1 1 30%; /* Adjust this to control the width relative to the container */
+  margin: 10px; /* Provides space between the boxes */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns content centrally within each box */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.action-box img {
+  width: 100%; /* Ensures the image takes up all available width of the box */
+  height: auto; /* Maintains aspect ratio but adjusts height automatically */
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+.box-text {
+  width: 100%; /* Ensures text container fills the box horizontally */
+  padding: 10px;
+  background-color: #f0f0f0; /* Light grey background for text area */
+  text-align: center; /* Centers the text */
+  flex-grow: 1; /* Makes the text container grow to fill available space */
+}
+
+.action-button {
+  width: calc(100% - 20px); /* Button width takes up full container width minus padding */
+  padding: 10px;
+  margin-top: 10px; /* Space above the button */
+  background-color: #e75d1d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #cc5c1d; /* Slightly darker on hover */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+.input-boxes-container {
+  display: flex;
+  justify-content: space-around; /* This will space out the boxes evenly */
+  flex-wrap: wrap; /* Allows the items to wrap in smaller screens */
+  margin: 20px 0; /* Space above and below the container */
+}
+
+.input-boxes-container .box {
+  flex: 1 1 30%; /* Each box will take up about 30% of the container width */
+  margin: 10px; /* Space between boxes */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-boxes-container .box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+.input-boxes-container .box-text {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  width: 100%;
+  color: #333;
+}
+
+.input-boxes-container .input-button {
+  width: auto;
+  padding: 8px 16px;
+  background-color: #e75d1d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.input-boxes-container .input-button:hover {
+  background-color: #cc5c1d;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.social-icons li {
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
