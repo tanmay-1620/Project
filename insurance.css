@@ -1,0 +1,348 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #eada4f;
+    color: #0f0b0b;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #cfc039e0;
+}
+
+/* Header Styles */
+header {
+    background-color: rgb(39, 60, 73);
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    float: left;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section Styles */
+#hero {
+    background-color: #f8f9fa;
+    color: #343a40;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 20px;
+}
+
+/* Coverage Section Styles */
+#coverage {
+    background-color: rgba(20, 173, 181, 0.925); /* Turquoise background */
+    color: rgba(11, 37, 54, 0.907); /* Dark blue text color */
+    padding: 40px 0;
+}
+
+.coverage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+}
+
+.coverage-option {
+    width: 48%;
+}
+
+.coverage-option h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.coverage-option ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.coverage-option ul li {
+    margin-bottom: 10px;
+}
+
+.your-insurance {
+    width: calc(50% - 20px); /* Adjust width and margin as needed */
+    margin-left: 20px; /* Add some margin */
+}
+
+.your-insurance h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.your-insurance p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.signup-btn, .pricing-btn {
+    background-color: #2e2d2d; /* Pink background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover, .pricing-btn:hover {
+    background-color: #3b2c30; /* Darker pink on hover */
+}
+
+.coverage-box {
+    width: 48%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.coverage-box h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.coverage-box .coverage-info p {
+    margin-bottom: 15px;
+}
+
+.coverage-box .view-coverage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    text-decoration: none;
+}
+
+.coverage-box .view-coverage .arrow {
+    margin-left: 10px;
+}
+
+.coverage-box .dropdown-content {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.coverage-box.expanded {
+    width: 100%;
+}
+
+.coverage-box.expanded .dropdown-content {
+    display: block;
+}
+.coverage-option img {
+    height: 24px;
+    width: 24px;
+}
+
+.coverage-box .view-coverage:hover + .dropdown-content,
+.coverage-box .dropdown-content:hover {
+    display: block;
+    position: absolute;
+    top: 100%; /* Position dropdown below the coverage box */
+    left: 0;
+    z-index: 1;
+}
+
+.coverage-box .dropdown-content {
+    display: none;
+    /* Remaining styles */
+}
+
+.coverage-box.expanded {
+    width: 100%; /* Expand box to full width */
+}
+/* Benefits Section Styles */
+#benefits {
+    background-color: rgb(225, 113, 139); /* Green color */
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#benefits h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#benefits ul {
+    font-size: 18px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#benefits ul li {
+    margin-bottom: 10px;
+}
+
+/* Get Quote Section Styles */
+#getquote {
+    background-color: #6c757d; /* Gray color */
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#getquote h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#getquote p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#getquote form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #343a40; /* Dark gray color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#getquote label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#getquote input[type="text"],
+#getquote input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#getquote button[type="submit"] {
+    background-color: #007bff; /* Green color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#getquote button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker green color */
+}
+
+/* Key Features Section Styles */
+#features {
+    background-color: rgb(225, 113, 139); /* Light gray color */
+    background-image: url('feather.png'), url('feather.png'); /* Paths to your feather images */
+    background-size: auto, auto, auto; /* Adjust the size of each background image */
+    background-position: top left, bottom right;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: inline-block;
+    width: calc(25% - 40px); /* Adjust the width of each feature box */
+    margin: 20px;
+    padding: 20px;
+    background-color: #fabfbf;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    vertical-align: top; /* Align boxes to the top */
+    text-align: left; /* Align text to the left */
+}
+
+.feature img {
+    width: 24px; /* Icon width */
+    height: 24px; /* Icon height */
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #343a40;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 10px;
+}

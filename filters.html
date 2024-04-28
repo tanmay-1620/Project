@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filters.css">
+    <title>Filters</title>
+</head>
+
+<body>
+    <button id="filters-button">Filters</button>
+    <div class="filters-popup" id="filters-popup">
+        <div class="main-filter">What:</div>
+        <div class="filter-options">
+            <div class="filter-option">
+                <img src="thermometer-warm-svgrepo-com.svg" alt="Warm Now" class="icon">Warm Now
+            </div>
+            <div class="filter-option">
+                <img src="cold-temperature-svgrepo-com.svg" alt="Cold Now" class="icon">Cold Now
+            </div>
+            <div class="filter-option">
+                <img src="mild-rain-day-svgrepo-com.svg" alt="Mild Now" class="icon">Mild Now
+            </div>
+        </div>
+        <div class="main-filter">Where:</div>
+        <div class="filter-options">
+            <div class="input-group">
+                <div class="filter-option">
+                    <img src="asia-australia.svg" alt="asia" class="icon">Asia
+                </div>
+                <div class="filter-option">
+                    <img src="europe_africa.svg" alt="australia" class="icon">Africa
+                </div>
+                <div class="filter-option">
+                    <img src="americas.svg" alt="north-america" class="icon">North America
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="filter-option">
+                    <img src="europe_africa.svg" alt="EU" class="icon">Europe
+                </div>
+                <div class="filter-option">
+                    <img src="americas.svg" alt="south-america" class="icon">South America
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="filter-option">
+                    <img src="americas.svg" alt="antarctica" class="icon">Antarctica
+                </div>
+                <div class="filter-option">
+                    <img src="asia-australia.svg" alt="australia" class="icon">Australia
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="filter-option">
+                    <img src="beach-svgrepo-com.svg" alt="Caribbean" class="icon">Caribbean
+                </div>
+                <div class="filter-option">
+                    <img src="mosque-svgrepo-com.svg" alt="ME" class="icon">Middle East
+                </div>
+            </div>
+        </div>
+        <div class="main-filter">When:</div>
+        <div class="filter-options">
+            <div class="input-group">
+                <div class="filter-option">
+                    <img src="winter-svgrepo-com.svg" alt="winter" class="icon">In the winter
+                </div>
+                <div class="filter-option">
+                    <img src="summer-coconut-drink-svgrepo-com.svg" alt="summer" class="icon">In the summer
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="filter-option">
+                    <img src="cloudy-spring-svgrepo-com.svg" alt="spring" class="icon">In the spring
+                </div>
+                <div class="filter-option">
+                    <img src="autumn-svgrepo-com.svg" alt="Autumn" class="icon">In the autumn
+                </div>
+            </div>
+        </div>
+    <!-- Health section -->
+<div class="main-filter">Health:</div>
+<div class="filter-options">
+    <div class="input-group">
+        <div class="filter-option">
+            <img src="air-nz-svgrepo-com.svg" alt="Clean Air" class="icon">Clean air
+        </div>
+        <div class="filter-option">
+            <img src="healthcare-hospital-medical-18-svgrepo-com.svg" alt="Good Hospitals" class="icon">Good Hospitals
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="filter-option">
+            <img src="ambulance-svgrepo-com.svg" alt="Ambulances" class="icon">Ambulances
+        </div>
+        <div class="filter-option">
+            <img src="healthcare-hospital-medical-18-svgrepo-com.svg" alt="Good Healthcare" class="icon">Good healthcare
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="filter-option">
+            <img src="no-smoking-mark-svgrepo-com.svg" alt="No Smoking" class="icon">No smoking
+        </div>
+        <div class="filter-option">
+            <img src="no-alcohol-svgrepo-com.svg" alt="No Alcohol" class="icon">No alcohol
+        </div>
+    </div>
+</div>
+<div class="main-filter">Visa free for these countries:</div>
+<div class="filter-options">
+    <div class="passport-select">
+        <label for="passport-select" class="passport-select-label"></label>
+        <select id="passport-select">
+            <option value="" selected disabled>Select your passport</option>
+        </select>
+</div>
+<div class="main-filter">Climate:</div>
+<div class="filter-options">
+    <div class="input-group">
+        <div class="filter-option">
+            <img src="tropical-drink-svgrepo-com.svg" alt="Tropical" class="icon"> Tropical
+        </div>
+        <div class="filter-option">
+            <img src="desert-svgrepo-com.svg" alt="Desert" class="icon"> Desert
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="filter-option">
+            <img src="polar-svgrepo-com.svg" alt="Continental" class="icon">Continental
+        </div>
+        <div class="filter-option">
+            <img src="polar-svgrepo-com.svg" alt="Polar" class="icon"> Polar
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="filter-option">
+            <img src="humidity-svgrepo-com.svg" alt="Humidity" class="icon">Humidity
+        </div>
+        <div class="filter-option">
+            <img src="sun-rays-svgrepo-com.svg" alt="UV" class="icon">UV Index
+        </div>
+    </div>
+</div>
+    <script src="filters.js"></script>
+</body>
+
+</html>

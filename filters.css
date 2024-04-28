@@ -1,0 +1,104 @@
+/* Styles for filter button */
+#filters-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #e75d1d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+#filters-button:hover {
+    background-color: #e75d1d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #000;
+}
+
+/* Styles for filters pop-up */
+.filters-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30%; /* Adjust width as needed */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    padding: 20px;
+    z-index: 9999; /* Ensure the pop-up is above other elements */
+}
+
+/* Styles for main filter option */
+.main-filter {
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+
+/* Styles for filter options */
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-option {
+    flex:  1 1 auto; /* Ensure each option occupies equal space */
+    margin-right: 10px;
+    margin-bottom: 10px; /* Adjust spacing between options and groups */
+    /*justify-content: center;*/ /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 8px 8px; /* Increased padding for better spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 35px;
+    font-size: 1.2em;
+    display: flex;
+}
+
+.filter-option:hover {
+    background-color: #f0f0f0;
+}
+.filter-option img {
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+    margin-right: 5px; /* Adjust as needed */
+}
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%; 
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.passport-select {
+    width: 100%; /* Adjust width as needed */
+}
+
+#passport-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Optional: Style for the "Select your Passport" text */
+.passport-select-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+
+
+  
